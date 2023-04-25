@@ -130,11 +130,17 @@
     <Content Include="PAdminLogin.aspx" />
     <Content Include="PAdminPage.aspx" />
     <Content Include="PClassic.aspx" />
+    <Content Include="PComedy.aspx" />
     <Content Include="PLogin.aspx" />
     <Content Include="PLogout.aspx" />
+    <Content Include="PPlays.aspx" />
     <Content Include="PRegister.aspx" />
     <Content Include="PUpdateInfo.aspx" />
+    <Content Include="PYA.aspx" />
     <Content Include="res\background.png" />
+    <Content Include="res\covers\crucible.jpg" />
+    <Content Include="res\covers\hitchikers_guide.jpg" />
+    <Content Include="res\covers\percy_jackson.jpg" />
     <Content Include="res\covers\to_kill_a_mockingbird.jpg" />
     <Content Include="res\get_the_book.png" />
     <Content Include="res\gmail.png" />
@@ -238,6 +244,13 @@
     <Compile Include="PClassic.aspx.designer.cs">
       <DependentUpon>PClassic.aspx</DependentUpon>
     </Compile>
+    <Compile Include="PComedy.aspx.cs">
+      <DependentUpon>PComedy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PComedy.aspx.designer.cs">
+      <DependentUpon>PComedy.aspx</DependentUpon>
+    </Compile>
     <Compile Include="PLogin.aspx.cs">
       <DependentUpon>PLogin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -251,6 +264,13 @@
     </Compile>
     <Compile Include="PLogout.aspx.designer.cs">
       <DependentUpon>PLogout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PPlays.aspx.cs">
+      <DependentUpon>PPlays.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PPlays.aspx.designer.cs">
+      <DependentUpon>PPlays.aspx</DependentUpon>
     </Compile>
     <Compile Include="PRegister.aspx.cs">
       <DependentUpon>PRegister.aspx</DependentUpon>
@@ -266,6 +286,13 @@
     </Compile>
     <Compile Include="PUpdateInfo.aspx.designer.cs">
       <DependentUpon>PUpdateInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PYA.aspx.cs">
+      <DependentUpon>PYA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PYA.aspx.designer.cs">
+      <DependentUpon>PYA.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
