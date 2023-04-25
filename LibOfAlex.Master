@@ -1,0 +1,251 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="LibOfAlex.master.cs" Inherits="lib_of_alex.LibOfAlex" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>ספריית אלקסנדריה השנייה</title>
+    <style>
+        /*
+            all classes starting with "base" are so the only apply in the master page and not any pages built on it
+        */
+        body {
+            direction: rtl;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            text-align: center;
+            background-image: url("res/background.png");
+            background-size: 100%;
+            background-repeat: repeat-y;
+        }
+
+        .base-table, .base-tr, .base-td {
+            border: none;
+        }
+
+        .base-table {
+            margin: auto auto;
+            position: relative;
+            top: 50px;
+        }
+
+        .header {
+            text-align: center;
+        }
+
+        a {
+            color: #0070c9;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 20px;
+        }
+        
+        h2, h3, h4, h5, h6 {
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            color: #0070c9;
+            margin-top: 30px;
+        }
+
+        p {
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        /* form styles */
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #663300;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .feedback {
+            color: red;
+        }
+    </style>
+    <script>
+        function displayTime() {
+            const outElementId = "clock";
+
+            // get current date and time
+            const dateObj = new Date();
+
+            // format the time
+            const formatted = dateObj.toLocaleString();
+
+            // display
+            document.getElementById(outElementId).innerHTML = formatted;
+        }
+
+        /*
+         * display a new time every second
+         */
+        function updateClock() {
+            var intervalId = window.setInterval(displayTime, 1000);
+        }
+
+        updateClock();
+
+        // user forms (registration & update)
+        function giveFeedback(feedbackElementId, msg) {
+            const feedbackElement = document.getElementById(feedbackElementId);
+            feedbackElement.innerHTML = msg;
+        }
+
+        function removeFeedback(feedbackElementId) {
+            const feedbackElement = document.getElementById(feedbackElementId);
+            feedbackElement.innerHTML = '';
+        }
+
+        /**
+         * checks if str1 includes only charcters from str2
+         */
+        function containsOnly(str1, str2) {
+            for (let char of str1) {
+                if (!str2.includes(char)) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        function isValidUsername(username) {
+            const minLength = 6;
+            const allowedChars = 'ABCDEFGHIJKMNLOPQRSTUVWXYZabcdefghijkmnlopqrstuvwxyz0123456789';
+
+            // check length
+            if (username.length < minLength) {
+                giveFeedback('usernameFeedback', 'שם משתמש חייב להיות 6 תווים או יותר');
+                return false;
+            }
+
+            // check allowed chars
+            if (!containsOnly(username, allowedChars)) {
+                giveFeedback('usernameFeedback', 'שם משתמש חייב להכיל רק תווים באנגלית ומספרים')
+                return false;
+            }
+
+            removeFeedback('usernameFeedback');
+            return true;
+        }
+
+        function isValidPassword(password) {
+            const minLength = 6;
+            const allowedChars = 'ABCDEFGHIJKMNLOPQRSTUVWXYZabcdefghijkmnlopqrstuvwxyz0123456789';
+
+            // check length
+            if (password.length < minLength) {
+                giveFeedback('passwordFeedback', 'סיסמה חייבת להיות 6 תווים או יותר');
+                return false;
+            }
+
+            // check allowed chars
+            if (!containsOnly(password, allowedChars)) {
+                giveFeedback('passwordFeedback', 'סיסמה חייבת להכיל רק תווים באנגלית ומספרים')
+                return false;
+            }
+
+            removeFeedback('passwordFeedback');
+            return true;
+        }
+
+        function isValidFirstName(name) {
+            const minLength = 2;
+
+            if (name.length < minLength) {
+                giveFeedback('firstNameFeedback', 'שם פרטי צריך להיות לפחות 2 תווים');
+                return false;
+            }
+
+            removeFeedback('firstNameFeedback');
+            return true;
+        }
+
+        function isValidLastName(name) {
+            const minLength = 2;
+
+            if (name.length < minLength) {
+                giveFeedback('lastNameFeedback', 'שם משפחה צריך להיות לפחות 2 תווים');
+                return false;
+            }
+
+            removeFeedback('lastNameFeedback');
+            return true;
+        }
+    </script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <table class="base-table">
+        <tr class="base-tr header">
+            <!-- login -->
+            <td class="base-td">
+                שלום <% =name %>
+                <br />
+                <% =links %>
+            </td>
+            <!-- title -->
+            <td class="base-td" id="top">
+                <h1>
+                    ספריית אלקסנדריה השנייה
+                </h1>
+            </td>
+            <!-- clock -->
+            <td class="base-td" id="clock" dir="ltr"></td>
+        </tr>
+        <!-- menu -->
+        <tr class="header base-tr">
+            <td class="base-td" colspan="3">
+                [&nbsp <a href="P1Home.aspx">בית</a> &nbsp] <!-- &nbsp &nbsp -->
+            </td>
+        </tr>
+        <!-- main -->
+        <tr class="base-tr">
+            <td class="base-td" colspan="3">
+                <main>
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </main>
+            </td>
+        </tr>
+        <!-- back to top button -->
+        <tr class="base-tr">
+            <td colspan="3" class="base-td">
+                <a href="mailto:idanmenaged@gmail.com">
+                    <img src="res/gmail.png"
+                        width="20"
+                        height="20" />
+                </a>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
