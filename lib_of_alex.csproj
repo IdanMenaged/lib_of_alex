@@ -128,7 +128,9 @@
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="P1Home.aspx" />
     <Content Include="PLogin.aspx" />
+    <Content Include="PLogout.aspx" />
     <Content Include="PRegister.aspx" />
+    <Content Include="PUpdateInfo.aspx" />
     <Content Include="res\background.png" />
     <Content Include="res\gmail.png" />
     <Content Include="Scripts\bootstrap.js" />
@@ -216,6 +218,13 @@
     <Compile Include="PLogin.aspx.designer.cs">
       <DependentUpon>PLogin.aspx</DependentUpon>
     </Compile>
+    <Compile Include="PLogout.aspx.cs">
+      <DependentUpon>PLogout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PLogout.aspx.designer.cs">
+      <DependentUpon>PLogout.aspx</DependentUpon>
+    </Compile>
     <Compile Include="PRegister.aspx.cs">
       <DependentUpon>PRegister.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -224,6 +233,13 @@
       <DependentUpon>PRegister.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PUpdateInfo.aspx.cs">
+      <DependentUpon>PUpdateInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PUpdateInfo.aspx.designer.cs">
+      <DependentUpon>PUpdateInfo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
