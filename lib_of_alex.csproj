@@ -128,12 +128,17 @@
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="P1Home.aspx" />
     <Content Include="PAdminLogin.aspx" />
+    <Content Include="PAdminPage.aspx" />
+    <Content Include="PClassic.aspx" />
     <Content Include="PLogin.aspx" />
     <Content Include="PLogout.aspx" />
     <Content Include="PRegister.aspx" />
     <Content Include="PUpdateInfo.aspx" />
     <Content Include="res\background.png" />
+    <Content Include="res\covers\to_kill_a_mockingbird.jpg" />
+    <Content Include="res\get_the_book.png" />
     <Content Include="res\gmail.png" />
+    <Content Include="res\trash.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -218,6 +223,20 @@
     </Compile>
     <Compile Include="PAdminLogin.aspx.designer.cs">
       <DependentUpon>PAdminLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PAdminPage.aspx.cs">
+      <DependentUpon>PAdminPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PAdminPage.aspx.designer.cs">
+      <DependentUpon>PAdminPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PClassic.aspx.cs">
+      <DependentUpon>PClassic.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PClassic.aspx.designer.cs">
+      <DependentUpon>PClassic.aspx</DependentUpon>
     </Compile>
     <Compile Include="PLogin.aspx.cs">
       <DependentUpon>PLogin.aspx</DependentUpon>

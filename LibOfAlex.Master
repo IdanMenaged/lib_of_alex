@@ -92,6 +92,20 @@
         .feedback {
             color: red;
         }
+
+        /* info pages */
+        .cover {
+            width: 50%;
+        }
+
+        .flex-container {
+            display: flex;
+        }
+
+        #info {
+            width: 44%;
+            overflow-x: auto;
+        }
     </style>
     <script>
         function displayTime() {
