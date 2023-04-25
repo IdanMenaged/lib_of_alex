@@ -25,6 +25,9 @@
 
         .base-table {
             margin: auto auto;
+        }
+
+        .header-offset {
             position: relative;
             top: 50px;
         }
@@ -204,7 +207,7 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    <table class="base-table">
+    <table class="base-table header-offset">
         <tr class="base-tr header">
             <!-- login -->
             <td class="base-td">
