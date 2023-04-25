@@ -127,6 +127,7 @@
     <Content Include="LibOfAlex.Master" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="P1Home.aspx" />
+    <Content Include="PAdminLogin.aspx" />
     <Content Include="PLogin.aspx" />
     <Content Include="PLogout.aspx" />
     <Content Include="PRegister.aspx" />
@@ -210,6 +211,13 @@
     </Compile>
     <Compile Include="P1Home.aspx.designer.cs">
       <DependentUpon>P1Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PAdminLogin.aspx.cs">
+      <DependentUpon>PAdminLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PAdminLogin.aspx.designer.cs">
+      <DependentUpon>PAdminLogin.aspx</DependentUpon>
     </Compile>
     <Compile Include="PLogin.aspx.cs">
       <DependentUpon>PLogin.aspx</DependentUpon>
